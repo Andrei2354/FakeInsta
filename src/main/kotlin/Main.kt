@@ -1,12 +1,13 @@
 import androidx.compose.desktop.ui.tooling.preview.Preview
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Button
-import androidx.compose.material.OutlinedTextField
-import androidx.compose.material.Text
-import androidx.compose.material.TextFieldDefaults
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.dp
@@ -19,10 +20,26 @@ import androidx.compose.ui.window.rememberWindowState
 fun App() {
     Column(modifier = Modifier.padding(start = 15.dp, end = 15.dp)) {
         Row() {
-            Text("Andrei")
+            Text("Título")
         }
         Row() {
             Text("Historias")
+        }
+        Card(){
+            Row(modifier = Modifier.padding(start = 15.dp, end = 15.dp)) {
+                message.forEach { message ->
+                    Column(modifier = Modifier.padding(10.dp)) {
+                        Image(
+                            painter = painterResource(resourcePath = message.image),
+                            contentDescription = "Foto",
+                            modifier = Modifier.size(width = 100.dp, height = 100.dp).clip(CircleShape)
+                        )
+                        Column(modifier = Modifier.padding(start = 10.dp)) {
+                            Text(modifier = Modifier.padding(top = 5.dp), text = message.name)
+                        }
+                    }
+                }
+            }
         }
         Row {
             Column(modifier = Modifier.padding(10.dp)) {
