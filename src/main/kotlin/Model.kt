@@ -1,39 +1,29 @@
 
+data class Historias(val name: String, val image: String)
+data class Sugerencias(val name: String, val image: String)
+data class Fotos(val image: String)
+data class Message(val name: String, val message: String, val image: String, val image2: String)
 
-
-//data class Message(val name: String, val surname: String, val message: String, val image: String)
-//
-//val body = "Texto1"
-//val body1 = "Texto2"
-//val body2 = "Texto3"
-//// Intentar añadir lista imagenes
-//
-//val message = listOf<Message>(
-//    Message("Sofia","Pérez", body, "download.jpeg"),
-//    Message("Jose", "Pérez",body1, "download.jpeg"),
-//    Message("Alvaro","Pérez", body2, "download.jpeg")
-//)
-
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Search
-import androidx.compose.material.icons.filled.Settings
-
-
-data class Message(val name: String, val message: String, val image: String)
-
-val body = "Texto1"
-val body1 = "Texto2"
-val body2 = "Texto3"
-
-val message = listOf<Message>(
-    Message("Sofia", body, "download.jpeg"),
-    Message("Random 1", body1, "download.jpeg"),
-    Message("Random 2", body2, "download.jpeg")
+val historias = listOf<Historias>(
+    Historias("Isidoro", "imagenes/download.jpeg"),
+    Historias("Laura", "imagenes/download2.jpeg"),
+    Historias("Jose", "imagenes/download3.jpeg"),
+    Historias("Persona1", "imagenes/download4.jpeg"),
+    Historias("Persona2", "imagenes/download5.jpeg"),
+    Historias("Persona3", "imagenes/download6.jpeg"),
+    Historias("Persona4", "imagenes/download7.jpeg"),
+    Historias("Persona5", "imagenes/download8.jpeg"),
+    Historias("Persona6", "imagenes/download9.jpeg"),
 )
-
-val items = listOf(
-    "Home" to Icons.Default.Home,
-    "Search" to Icons.Default.Search,
-    "Settings" to Icons.Default.Settings
+val sugerencias = listOf<Sugerencias>(
+    Sugerencias("Isidoro", "imagenes/download.jpeg"),
+    Sugerencias("Laura", "imagenes/download2.jpeg"),
+)
+val fotos = listOf<Fotos>(
+    Fotos("imagenes/publi2.jpeg"),
+    Fotos("imagenes/publi2.jpeg"),
+)
+val message = listOf<Message>(
+    Message("Isidoro", "Me gustan los perros.", "imagenes/download.jpeg", "imagenes/publi2.jpeg"),
+    Message("Laura", "Mira el árbol blanco.", "imagenes/download2.jpeg", "imagenes/aa.jpg"),
 )
